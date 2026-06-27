@@ -1,0 +1,639 @@
+/* --- Color Palette & Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+:root {
+    --primary: #e67e22;       /* Vibrant Amber Orange */
+    --primary-dark: #d35400;  /* Deep Roasted Burnt Orange */
+    --coffee: #6f4e37;        /* Coffee Espresso Brown */
+    --pizza: #e74c3c;         /* Pizza Tomato Red */
+    --burger: #2ecc71;        /* Fresh Burger Lettuce Green */
+    --dark-bg: #11100e;       /* Velvet Night Espresso Black */
+    --light-bg: #fdfaf4;      /* Cream White Warm Base */
+    --text-dark: #2c2620;     /* Rich Cocoa Chocolate */
+    --text-light: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Sticky Elegant Navbar --- */
+header {
+    background-color: rgba(17, 16, 14, 0.96);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+    border-bottom: 2px solid var(--primary);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #eaeaea;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Wishlist Floating Nav Trigger */
+.wishlist-icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.wishlist-icon-btn:hover {
+    color: var(--primary);
+}
+
+.wishlist-count {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background-color: var(--pizza);
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* --- Vivid Dynamic Hero Banner --- */
+.hero {
+    height: 95vh;
+    margin-top: 60px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), 
+                      url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 35px;
+    color: #f0e6d2;
+}
+
+.btn-menu {
+    display: inline-block;
+    padding: 15px 45px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.6);
+}
+
+/* --- Section Configurations --- */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #776e65;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* --- Why Choose Us Section --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid #f1eae2;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+/* --- Colorful Category Interactive Filters --- */
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #e2d7cd;
+    background: var(--text-light);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn[data-filter="all"]:hover, .filter-btn[data-filter="all"].active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+.filter-btn[data-filter="coffee"]:hover, .filter-btn[data-filter="coffee"].active {
+    background-color: var(--coffee);
+    border-color: var(--coffee);
+    color: white;
+}
+.filter-btn[data-filter="burger"]:hover, .filter-btn[data-filter="burger"].active {
+    background-color: var(--burger);
+    border-color: var(--burger);
+    color: white;
+}
+.filter-btn[data-filter="pizza"]:hover, .filter-btn[data-filter="pizza"].active {
+    background-color: var(--pizza);
+    border-color: var(--pizza);
+    color: white;
+}
+
+/* --- Upgraded Menu Cards Grid Layout --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.menu-item {
+    background: var(--text-light);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid #f1eae2;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.menu-item.hide {
+    display: none;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.menu-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .menu-img {
+    transform: scale(1.08);
+}
+
+/* Dynamic Colored Tags */
+.menu-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    padding: 6px 14px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.tag-coffee { background-color: var(--coffee); }
+.tag-burger { background-color: var(--burger); }
+.tag-pizza { background-color: var(--pizza); }
+
+/* Wishlist Heart Icon Wrapper Button */
+.add-wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.add-wishlist-btn:hover {
+    transform: scale(1.1);
+    color: var(--pizza);
+}
+
+.add-wishlist-btn.active {
+    color: var(--pizza);
+}
+
+.menu-info {
+    padding: 25px;
+}
+
+.menu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.menu-meta h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.menu-price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 2px 10px;
+    background-color: #fff9f3;
+    border-radius: 6px;
+    border: 1px dashed var(--primary);
+    color: var(--primary-dark);
+}
+
+.menu-info p {
+    font-size: 0.95rem;
+    color: #6a6259;
+}
+
+/* --- Testimonials Sidebar / Section --- */
+.testimonials {
+    background-color: #f5ede2;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--text-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+}
+
+.stars {
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #5c5247;
+    margin-bottom: 15px;
+}
+
+.user-info h4 {
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* --- WhatsApp Form Layout --- */
+.booking-section {
+    background: linear-gradient(#fdfaf4, #f3ede2);
+}
+
+.booking-wrapper {
+    background-color: var(--text-light);
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    border: 1px solid #ebe2d5;
+    position: relative;
+}
+
+.booking-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, var(--coffee), var(--primary), var(--pizza));
+    border-radius: 20px 20px 0 0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5c5247;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #eaddce;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #fdfcfb;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(37, 211, 102, 0.55);
+}
+
+/* --- Wishlist Slide-out Sidebar Panel --- */
+.wishlist-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.15);
+    z-index: 2000;
+    transition: right 0.4s ease;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-sidebar.open {
+    right: 0;
+}
+
+.wishlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.close-wishlist {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.wishlist-items-container {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f9f6f2;
+}
+
+.wishlist-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.wishlist-item-details {
+    flex: 1;
+}
+
+.wishlist-item-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.wishlist-item-details span {
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.remove-from-wishlist-btn {
+    background: none;
+    border: none;
+    color: #ccbeaf;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.remove-from-wishlist-btn:hover {
+    color: var(--pizza);
+}
+
+.wishlist-empty-msg {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* --- Footer Layout --- */
+footer {
+    background-color: var(--dark-bg);
+    color: #968e85;
+    padding: 60px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin-bottom: 20px;
+}
+
+.footer-socials a {
+    color: var(--primary);
+    margin: 0 12px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-socials a:hover {
+    color: var(--text-light);
+    transform: scale(1.2);
+}

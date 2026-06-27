@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind | Gourmet Café & Bistro</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">The Cafe'<span>Aura</span></a>
+                <div class="nav-right">
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#why-us">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#book-table">Order</a></li>
+                    </ul>
+                    <button class="wishlist-icon-btn" onclick="toggleWishlistSidebar()">
+                        <i class="fa-solid fa-heart"></i>
+                        <span class="wishlist-count" id="wishlist-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>Crave the Extraordinary</h1>
+            <p>From freshly-roasted blends to handcrafted pizzas and premium stack burgers.</p>
+            <a href="#menu" class="btn-menu">Explore Full Menu</a>
+        </div>
+    </section>
+
+    <section id="why-us" class="container">
+        <h2 class="section-title">Crafted With Passion</h2>
+        <p class="section-subtitle">What makes your experience at The Daily Grind distinct</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h3>100% Organic Beans</h3>
+                <p>Ethically sourced premium beans, roasted carefully in house everyday for flawless flavor profiles.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Artisanal Culinary</h3>
+                <p>Our veteran chefs structure everything by hand with premium local farm ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Instant Prep & Checkout</h3>
+                <p>Zero wait time infrastructure routes your selections directly into our workspace streams.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+        <h2 class="section-title">Explore Our Cravings</h2>
+        <p class="section-subtitle">Filter by category to find your perfect flavor match</p>
+        
+        <div class="menu-filters">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="coffee">☕ Coffees</button>
+            <button class="filter-btn" data-filter="burger">🍔 Burgers</button>
+            <button class="filter-btn" data-filter="pizza">🍕 Pizzas</button>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-item" data-category="coffee" id="item-1">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80" alt="Artisan Latte" class="menu-img">
+                    <span class="menu-tag tag-coffee">Coffee</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-1', 'Artisan Latte', '$4.50', 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>Hot coffee</h3>
+                        <span class="menu-price">80 Rs.</span>
+                    </div>
+                    <p>Smooth, double espresso shot poured over velvety, texturized micro-foam milk with artisan designs.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="burger" id="item-2">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Prime Crunch Burger" class="menu-img">
+                    <span class="menu-tag tag-burger">Burger</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-2', 'Prime Crunch Burger', '$12.95', 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>Classic Burger</h3>
+                        <span class="menu-price">120 Rs.</span>
+                    </div>
+                    <p>Angus beef patty with melted sharp cheddar, crispy smoked bacon, crisp butter lettuce, and house bistro sauce.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="pizza" id="item-3">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=600&q=80" alt="Fiery Pepperoni" class="menu-img">
+                    <span class="menu-tag tag-pizza">Pizza</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-3', 'Fiery Pepperoni', '$15.50', 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>pizza</h3>
+                        <span class="menu-price">150 Rs.</span>
+                    </div>
+                    <p>Artisanal crust topped with spicy napoli salami, fresh mozzarella pearls, crushed chili flakes, and hot honey glaze.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="coffee" id="item-4">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80" alt="Nitro Cold Brew" class="menu-img">
+                    <span class="menu-tag tag-coffee">Coffee</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-4', 'Nitro Cold Brew', '$5.25', 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>Cold Coffee</h3>
+                        <span class="menu-price">50 Rs.</span>
+                    </div>
+                    <p>Steeped for 20 hours and infused with nitrogen for a naturally sweet, creamy head and super-smooth finish.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="burger" id="item-5">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=600&q=80" alt="Truffle Mushroom" class="menu-img">
+                    <span class="menu-tag tag-burger">Burger</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-5', 'Truffle Mushroom', '$14.25', 'https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>Truffle Mushroom</h3>
+                        <span class="menu-price">140 Rs.</span>
+                    </div>
+                    <p>Gourmet beef stack topped with wild sautéed mushrooms, melted swiss cheese, and decadent white truffle aioli.</p>
+                </div>
+            </div>
+
+            <div class="menu-item" data-category="pizza" id="item-6">
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Tuscan Margherita" class="menu-img">
+                    <span class="menu-tag tag-pizza">Pizza</span>
+                    <button class="add-wishlist-btn" onclick="toggleWishlist('item-6', 'Tuscan Margherita', '$13.95', 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80')">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <div class="menu-info">
+                    <div class="menu-meta">
+                        <h3>Margherita</h3>
+                        <span class="menu-price">230 Rs.</span>
+                    </div>
+                    <p>Slow-roasted heirloom cherry tomatoes, premium mozzarella, freshly picked basil leaves, and cold-pressed olive oil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Reviews</h2>
+            <p class="section-subtitle">Real feedback from our regular bistro guests</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"The Nitro Cold Brew here changes you. It's incredibly creamy and doesn't even need sugar. Combined with the Truffle Burger, this place is unbeatable."</p>
+                    <div class="user-info"><h4>Pranali Chavan</h4></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"Ordered via WhatsApp using their quick desk checkout layout, and our Fiery Pepperoni pizza arrived piping hot at the corner table in minutes!"</p>
+                    <div class="user-info"><h4>Srushti Bhosale</h4></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p>"The artisan lattes have flawless designs every time. Excellent environment to work out of or catch up with friends over high-quality gourmet items."</p>
+                    <div class="user-info"><h4>Shreya Jadhav</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book-table" class="booking-section">
+        <div class="container">
+            <h2 class="section-title">Order or Book Securely</h2>
+            <p class="section-subtitle">Your selections are packaged instantly and sent to our staff checkout counter via WhatsApp</p>
+            
+            <div class="booking-wrapper">
+               <form id="whatsappForm" method="POST" action="insert.php">
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="msg" required></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
+            </div>
+        </div>
+    </section>
+
+    <div class="wishlist-sidebar" id="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h3>My Saved Wishlist</h3>
+            <button class="close-wishlist" onclick="toggleWishlistSidebar()">&times;</button>
+        </div>
+        <div class="wishlist-items-container" id="wishlist-items-container">
+            <p class="wishlist-empty-msg">Your wishlist is currently empty.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TrendVibe. All rights reserved. Built with passion.</p>
+        <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
